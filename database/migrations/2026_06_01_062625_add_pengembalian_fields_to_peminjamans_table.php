@@ -10,6 +10,10 @@ class AddPengembalianFieldsToPeminjamansTable extends Migration
     {
         Schema::table('peminjamans', function (Blueprint $table) {
 
+            $table->string('lokasi_pengembalian')
+                ->nullable()
+                ->after('tanggal_kembali');
+
             $table->string('foto_pengembalian')
                 ->nullable()
                 ->after('lokasi_pengembalian');
@@ -17,7 +21,6 @@ class AddPengembalianFieldsToPeminjamansTable extends Migration
             $table->integer('jumlah_kembali')
                 ->nullable()
                 ->after('jumlah');
-
         });
     }
 
@@ -26,10 +29,10 @@ class AddPengembalianFieldsToPeminjamansTable extends Migration
         Schema::table('peminjamans', function (Blueprint $table) {
 
             $table->dropColumn([
+                'lokasi_pengembalian',
                 'foto_pengembalian',
                 'jumlah_kembali'
             ]);
-
         });
     }
 }
