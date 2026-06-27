@@ -15,8 +15,8 @@ class BarangSeeder extends Seeder
      */
     public function run()
     {
-        // Menghapus data lama agar tidak double saat di-seed ulang (opsional)
-        DB::table('barangs')->truncate();
+        // Hapus data lama tanpa memicu error foreign key constraint.
+        DB::table('barangs')->delete();
 
         DB::table('barangs')->insert([
             [
