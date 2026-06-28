@@ -13,10 +13,6 @@ class AddSpesifikasiToAssetsTable extends Migration
             if (!Schema::hasColumn('assets', 'spesifikasi')) {
                 $table->text('spesifikasi')->nullable()->after('kondisi');
             }
-
-            // Pastikan lokasi dan kondisi nullable agar tidak error saat insert
-            $table->string('lokasi')->nullable()->change();
-            $table->string('kondisi')->nullable()->change();
         });
     }
 

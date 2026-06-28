@@ -14,8 +14,8 @@ return new class extends Migration
             $table->string('nama_aset');
             $table->string('kategori');
             $table->integer('stok');
-            $table->string('kondisi');
-            $table->string('lokasi');
+            $table->string('kondisi')->nullable();
+            $table->string('lokasi')->nullable();
             $table->timestamps();
         });
     }

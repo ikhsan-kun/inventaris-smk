@@ -10,7 +10,8 @@ class CreateTransaksisTable extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('barang_id')->constrained('barangs')->onDelete('cascade');
+            $table->foreignId('barang_id')->nullable()->constrained('barangs')->onDelete('cascade');
+            $table->foreignId('asset_id')->nullable()->constrained('assets')->onDelete('cascade');
             $table->integer('jumlah');
             $table->enum('tipe', ['masuk', 'keluar']);
             $table->text('keterangan')->nullable();
