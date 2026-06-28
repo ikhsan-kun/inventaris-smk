@@ -19,7 +19,7 @@ class AddRoleToUsersTable extends Migration
 
         DB::table('users')
             ->where('name', 'Admin Sarpras')
-            ->orWhere('email', 'adminal-irsyad@gmail.com')
+            ->orWhere('email', 'admin@alirsyad.sch.id')
             ->update(['role' => 'admin']);
     }
 

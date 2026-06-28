@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <title>Login Admin - SMK Al-Irsyad</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
-
-        *{
+        * {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        body{
+        body {
             background:
-            radial-gradient(circle at top left, #edf5f2 0%, #f8fafc 45%, #f1f5f9 100%);
+                radial-gradient(circle at top left, #edf5f2 0%, #f8fafc 45%, #f1f5f9 100%);
         }
-
     </style>
 
 </head>
 
 <body class="min-h-screen flex items-center justify-center px-4 py-2">
 
-</div>
     <!-- CARD -->
     <div class="w-full max-w-4xl
     bg-white/90 backdrop-blur-xl
@@ -61,9 +60,7 @@
                 flex items-center justify-center
                 mx-auto mb-8 shadow-xl">
 
-                    <img
-                    src="{{ asset('images/logo.png') }}"
-                    class="w-[50px] object-contain">
+                    <img src="{{ asset('images/logo.png') }}" class="w-[50px] object-contain">
 
                 </div>
 
@@ -120,7 +117,7 @@
             @if(session('error'))
 
                 <div class="bg-red-50 border border-red-100
-                text-red-500 px-4 py-2 rounded-xl mb-5 text-sm font-medium">
+                    text-red-500 px-4 py-2 rounded-xl mb-5 text-sm font-medium">
 
                     {{ session('error') }}
 
@@ -132,7 +129,7 @@
             @if(session('success'))
 
                 <div class="bg-emerald-50 border border-emerald-100
-                text-emerald-600 px-4 py-2 rounded-xl mb-5 text-sm font-medium">
+                    text-emerald-600 px-4 py-2 rounded-xl mb-5 text-sm font-medium">
 
                     {{ session('success') }}
 
@@ -141,10 +138,7 @@
             @endif
 
             <!-- FORM -->
-            <form
-            method="POST"
-            action="{{ route('login.admin') }}"
-            class="space-y-3">
+            <form method="POST" action="{{ route('login.admin') }}" class="space-y-3">
 
                 @csrf
 
@@ -159,13 +153,7 @@
 
                     </label>
 
-                    <input
-                    type="text"
-                    name="username"
-                    placeholder="Masukkan username"
-                    autocomplete="off"
-
-                    class="w-full
+                    <input type="text" name="username" placeholder="Masukkan username" autocomplete="off" class="w-full
                     bg-slate-50
                     border border-slate-200
                     rounded-xl
@@ -174,9 +162,7 @@
                     outline-none
                     focus:border-[#2f5d50]
                     focus:ring-4 focus:ring-[#2f5d50]/10
-                    transition-all"
-
-                    required>
+                    transition-all" required>
 
                 </div>
 
@@ -191,13 +177,8 @@
 
                     </label>
 
-                    <input
-                    type="password"
-                    name="password"
-                    placeholder="Masukkan password"
-                    autocomplete="new-password"
-
-                    class="w-full
+                    <input type="password" name="password" placeholder="Masukkan password" autocomplete="new-password"
+                        class="w-full
                     bg-slate-50
                     border border-slate-200
                     rounded-xl
@@ -206,9 +187,7 @@
                     outline-none
                     focus:border-[#2f5d50]
                     focus:ring-4 focus:ring-[#2f5d50]/10
-                    transition-all"
-
-                    required>
+                    transition-all" required>
 
                 </div>
 
@@ -218,17 +197,13 @@
                     <label class="flex items-center gap-3
                     text-sm text-slate-500 font-medium">
 
-                        <input
-                        type="checkbox"
-                        name="remember"
-                        class="accent-[#2f5d50] w-4 h-4">
+                        <input type="checkbox" name="remember" class="accent-[#2f5d50] w-4 h-4">
 
                         Ingat saya
 
                     </label>
 
-                    <a href="/lupapasswordadmin"
-                    class="text-sm font-semibold
+                    <a href="/lupapasswordadmin" class="text-sm font-semibold
                     text-[#2f5d50]
                     hover:underline">
 
@@ -239,10 +214,7 @@
                 </div>
 
                 <!-- BUTTON -->
-                <button
-                type="submit"
-
-                class="w-full
+                <button type="submit" class="w-full
                 bg-[#2f5d50]
                 hover:bg-[#23463c]
                 transition-all duration-300
@@ -262,9 +234,7 @@
             <div class="grid grid-cols-2 gap-3 mt-3">
 
                 <!-- ADMIN -->
-                <a href="/login-admin"
-
-                class="bg-[#2f5d50]
+                <a href="/login-admin" class="bg-[#2f5d50]
                 text-white text-center
                 py-2 rounded-xl
                 font-bold text-sm
@@ -275,9 +245,7 @@
                 </a>
 
                 <!-- USER -->
-                <a href="/login-user"
-
-                class="bg-slate-100
+                <a href="/login-user" class="bg-slate-100
                 hover:bg-slate-200
                 transition-all
                 text-slate-600
@@ -304,4 +272,5 @@
     </div>
 
 </body>
+
 </html>

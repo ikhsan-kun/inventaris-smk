@@ -122,12 +122,14 @@ class PeminjamanController extends Controller
 
             Peminjaman::create([
 
+                'user_id'       => session('admin_id') ?? session('user_id'),
+
                 'peminjam_tipe' => $request->peminjam_tipe,
                 'peminjam_id'   => $peminjamId,
 
                 'aset_id' => $request->aset_id,
 
-                'jenis' => 'aset', // TAMBAHAN INI
+                'jenis' => 'aset',
 
                 'jumlah' => $request->jumlah,
 

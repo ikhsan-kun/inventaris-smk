@@ -19,18 +19,26 @@ class BarangController extends Controller
         $barangs = Barang::when($search, function ($query) use ($search) {
 
             $query->where('nama_barang', 'like', "%{$search}%")
-                  ->orWhere('kode_barang', 'like', "%{$search}%")
-                  ->orWhere('kategori', 'like', "%{$search}%");
+                ->orWhere('kode_barang', 'like', "%{$search}%")
+                ->orWhere('kategori', 'like', "%{$search}%");
 
         })
-        ->latest()
-        ->get();
+            ->latest()
+            ->get();
 
         // TAMPILKAN KE VIEW
         return view('databarang', compact(
             'barangs',
             'search'
         ));
+    }
+
+    // =========================
+    // FORM TAMBAH BARANG (redirect ke barang masuk)
+    // =========================
+    public function create()
+    {
+        return redirect()->route('barang.masuk');
     }
 
     // =========================
@@ -58,7 +66,7 @@ class BarangController extends Controller
         ]);
 
         // UPLOAD FOTO
-        $foto = time().'.'.$request->foto->extension();
+        $foto = time() . '.' . $request->foto->extension();
 
         $request->foto->move(
             public_path('foto-barang'),
@@ -87,20 +95,20 @@ class BarangController extends Controller
         ]);
 
         // REDIRECT
-        return redirect('/data-barang')
+        return redirect('/barang')
             ->with(
                 'success',
                 'Barang berhasil ditambahkan'
             );
     }
 
-public function detail($id)
-{
-    $barang = Barang::findOrFail($id);
+    public function detail($id)
+    {
+        $barang = Barang::findOrFail($id);
 
-    return view(
-        'detailbarangqr',
-        compact('barang')
-    );
-}
+        return view(
+            'detailbarangqr',
+            compact('barang')
+        );
+    }
 }

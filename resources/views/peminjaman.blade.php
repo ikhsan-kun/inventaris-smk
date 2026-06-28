@@ -229,9 +229,9 @@
 
                                 onclick="showQR(
 
-                                '{{ $p->barang ? $p->barang->kode_barang : $p->aset->kode_aset }}',
+                                '{{ $p->barang ? $p->barang->kode_barang : optional($p->aset)->kode_aset }}',
 
-                                '{{ $p->barang ? $p->barang->nama_barang : $p->aset->nama_aset }}'
+                                '{{ $p->barang ? $p->barang->nama_barang : optional($p->aset)->nama_aset }}'
 
                                 )"
 

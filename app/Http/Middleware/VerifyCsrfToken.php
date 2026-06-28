@@ -12,9 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        '/login-admin',
-        '/login-user',
-        '/reset-password-admin',
-        '/reset-password-user',
+        // no exclusions: all POST forms should use CSRF tokens
     ];
 }

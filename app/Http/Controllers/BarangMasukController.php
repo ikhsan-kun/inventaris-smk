@@ -37,7 +37,7 @@ class BarangMasukController extends Controller
 
             'tanggal_masuk' => 'required',
 
-            'kode_barang' => 'required',
+            'kode_barang' => 'required|unique:barangs,kode_barang',
 
             'kategori' => 'required',
 
@@ -111,7 +111,7 @@ class BarangMasukController extends Controller
 
             'tanggal_masuk' => 'required',
 
-            'kode_barang' => 'required',
+            'kode_barang' => 'required|unique:barangs,kode_barang,' . $barang->id,
 
             'kategori' => 'required',
 

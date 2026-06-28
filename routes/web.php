@@ -106,7 +106,7 @@ Route::post('/hapus-notifikasi', function () {
 
 });
 Route::get('/profil-peminjam', function () {if (!session('user_id')) {return redirect('/login-user');}$user = \App\Models\User::find(session('user_id'));if (!$user) {return redirect('/login-user');}return view('profilpeminjam', compact('user'));});
-Route::get('/pengaturanprofilpeminjam', function () {$user = \App\Models\User::find(session('user_id'));return view('pengaturanprofilpeminjam', compact('user'));});
+Route::get('/pengaturanprofilpeminjam', function () {if (!session('user_id')) {return redirect('/login-user');}$user = \App\Models\User::find(session('user_id'));if (!$user) {return redirect('/login-user');}return view('pengaturanprofilpeminjam', compact('user'));});
 
 // MENU INVENTARIS
 // barang
@@ -123,7 +123,7 @@ Route::delete('/hapus-aset/{id}', [AssetController::class, 'destroy']);
 Route::get('/barang-masuk', [BarangMasukController::class, 'index'])->name('barang.masuk');
 Route::post('/barang-masuk/store', [BarangMasukController::class, 'store'])->name('barang.store');
 Route::put('/barang-masuk/update/{id}',[BarangMasukController::class, 'update']);
-Route::delete('/barang-delete/{id}', [BarangMasukController::class, 'destroy'])->name('barang.destroy');
+Route::delete('/barang-delete/{id}', [BarangMasukController::class, 'destroy'])->name('barang.hapus');
 
 // inventaris keluar
 Route::get('/inventaris-keluar',[DashboardController::class, 'inventarisKeluar'])->name('inventaris.keluar');
@@ -138,7 +138,7 @@ Route::get('/data-ruangan', [RuanganController::class, 'index'])->name('ruangan.
 
 Route::get('/laporan', [DashboardController::class, 'laporan'])->name('laporan.index');
 
-Route::delete('/barang/{id}', [BarangMasukController::class, 'destroy'])->name('barang.hapus');
+// Route hapus barang sudah didefinisikan di atas (barang.hapus -> /barang-delete/{id})
 
 // pengaturan profil admin
 Route::get('/profil-admin', function () {if (!session('admin_id')) {return redirect('/login-admin');}$user = \App\Models\User::find(session('admin_id'));if (!$user) {return redirect('/login-admin');} return view('profiladmin', compact('user'));});

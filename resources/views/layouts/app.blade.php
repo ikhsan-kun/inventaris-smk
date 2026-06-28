@@ -264,6 +264,20 @@
 
         </nav>
 
+        <!-- LOGOUT -->
+        <div class="px-4 pb-2">
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit"
+                    class="w-full flex items-center gap-3 px-4 py-3
+                    text-red-400 hover:bg-red-50 hover:text-red-500
+                    rounded-xl transition-all text-sm font-medium">
+                    <i class="fas fa-sign-out-alt w-5"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+        </div>
+
         <!-- FOOTER -->
         <div class="p-4 bg-[#2f5d50] m-4 rounded-xl text-white shadow-xl">
 

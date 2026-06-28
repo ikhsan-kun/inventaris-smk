@@ -10,19 +10,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
-        body{
-            font-family:'Plus Jakarta Sans',sans-serif;
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
 
             background:
-            radial-gradient(circle at top left,
-            #edf5f2 0%,
-            #f8fafc 45%,
-            #f1f5f9 100%);
+                radial-gradient(circle at top left,
+                    #edf5f2 0%,
+                    #f8fafc 45%,
+                    #f1f5f9 100%);
         }
-
     </style>
 
 </head>
@@ -46,16 +44,11 @@
                 text-[#2f5d50]
                 shadow-inner mb-6">
 
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="w-7 h-7"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
 
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M12 11c0-1.657 1.343-3 3-3s3 1.343 3 3v1h1a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1h1v-1a3 3 0 016 0v1h4v-1z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 11c0-1.657 1.343-3 3-3s3 1.343 3 3v1h1a1 1 0 011 1v5a1 1 0 01-1 1H5a1 1 0 01-1-1v-5a1 1 0 011-1h1v-1a3 3 0 016 0v1h4v-1z" />
 
                     </svg>
 
@@ -82,10 +75,10 @@
                 @if(session('error'))
 
                     <div class="bg-red-50
-                    border border-red-100
-                    text-red-500
-                    text-sm
-                    px-4 py-3 rounded-xl mb-4">
+                        border border-red-100
+                        text-red-500
+                        text-sm
+                        px-4 py-3 rounded-xl mb-4">
 
                         {{ session('error') }}
 
@@ -96,10 +89,10 @@
                 @if(session('success'))
 
                     <div class="bg-[#eef7f4]
-                    border border-[#d9ebe4]
-                    text-[#2f5d50]
-                    text-sm
-                    px-4 py-3 rounded-xl mb-4">
+                        border border-[#d9ebe4]
+                        text-[#2f5d50]
+                        text-sm
+                        px-4 py-3 rounded-xl mb-4">
 
                         {{ session('success') }}
 
@@ -107,10 +100,7 @@
 
                 @endif
 
-                <form method="POST"
-                      action="/reset-password-user"
-                      autocomplete="off"
-                      class="space-y-4">
+                <form method="POST" action="/reset-password-user" autocomplete="off" class="space-y-4">
 
                     @csrf
 
@@ -125,16 +115,12 @@
                         text-slate-400
                         mb-2">
 
-                            Username Peminjam
+                            Email Peminjam
 
                         </label>
 
-                        <input
-                        type="text"
-                        name="username"
-                        autocomplete="off"
-                        placeholder="Masukkan username peminjam"
-                        class="w-full
+                        <input type="email" name="email" autocomplete="off" placeholder="Masukkan email peminjam"
+                            class="w-full
                         bg-slate-50
                         border border-slate-200
                         rounded-xl
@@ -143,8 +129,7 @@
                         focus:outline-none
                         focus:ring-2
                         focus:ring-[#2f5d50]/20
-                        focus:border-[#2f5d50]"
-                        required>
+                        focus:border-[#2f5d50]" required>
 
                     </div>
 
@@ -163,12 +148,8 @@
 
                         </label>
 
-                        <input
-                        type="password"
-                        name="password"
-                        autocomplete="new-password"
-                        placeholder="Masukkan password baru"
-                        class="w-full
+                        <input type="password" name="password" autocomplete="new-password"
+                            placeholder="Masukkan password baru" class="w-full
                         bg-slate-50
                         border border-slate-200
                         rounded-xl
@@ -177,15 +158,12 @@
                         focus:outline-none
                         focus:ring-2
                         focus:ring-[#2f5d50]/20
-                        focus:border-[#2f5d50]"
-                        required>
+                        focus:border-[#2f5d50]" required>
 
                     </div>
 
                     <!-- BUTTON -->
-                    <button
-                    type="submit"
-                    class="w-full
+                    <button type="submit" class="w-full
                     bg-[#2f5d50]
                     hover:bg-[#3f7465]
                     text-white
@@ -202,8 +180,7 @@
                 </form>
 
                 <!-- KEMBALI -->
-                <a href="/login-user"
-                   class="mt-5 flex items-center justify-center gap-2
+                <a href="/login-user" class="mt-5 flex items-center justify-center gap-2
                    text-sm font-semibold text-slate-500
                    hover:text-[#2f5d50]
                    transition">
@@ -219,4 +196,5 @@
     </div>
 
 </body>
+
 </html>

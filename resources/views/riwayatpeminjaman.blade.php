@@ -182,9 +182,9 @@
 
                     <div class="text-sm font-medium text-slate-700">
                         @if($item->jenis == 'barang')
-                            {{ $item->barang->nama_barang }}
+                            {{ optional($item->barang)->nama_barang ?? '-' }}
                         @else
-                            {{ $item->aset->nama_aset }}
+                            {{ optional($item->aset)->nama_aset ?? '-' }}
                         @endif
                     </div>
 
@@ -192,9 +192,9 @@
 
                 <td class="px-4 py-3 border border-slate-200 text-sm text-slate-600">
                     @if($item->jenis == 'barang')
-                        {{ $item->barang->lokasi ?? '-' }}
+                        {{ optional($item->barang)->lokasi ?? '-' }}
                     @else
-                        {{ $item->aset?->lokasi ?? '-' }}
+                        {{ optional($item->aset)->lokasi ?? '-' }}
                     @endif
                 </td>
 
@@ -269,7 +269,7 @@
                         <!-- DETAIL -->
                         <button
                         onclick="openDetailModal(
-                        '{{ $item->jenis == 'barang' ? $item->barang->nama_barang : $item->aset->nama_aset }}',
+                        '{{ $item->jenis == 'barang' ? optional($item->barang)->nama_barang : optional($item->aset)->nama_aset }}',
                         '{{ $item->tanggal_pinjam }}',
                         '{{ $item->jumlah }}',
                         '{{ $item->kondisi_pinjam }}',

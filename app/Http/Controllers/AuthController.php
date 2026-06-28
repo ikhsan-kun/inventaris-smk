@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -28,7 +29,7 @@ class AuthController extends Controller
 
         session()->flush();
 
-        $admin = User::where('name', $request->username)
+        $admin = User::where('username', $request->username)
                     ->where('role', 'admin')
                     ->first();
 
@@ -118,6 +119,7 @@ class AuthController extends Controller
         User::create([
 
             'name' => $request->name,
+            'username' => Str::slug($request->name, '_'),
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'peminjam',
@@ -159,7 +161,7 @@ class AuthController extends Controller
             'password' => 'required|min:3',
         ]);
 
-        $admin = User::where('name', $request->username)
+        $admin = User::where('username', $request->username)
                     ->where('role', 'admin')
                     ->first();
 
