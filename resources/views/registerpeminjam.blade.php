@@ -141,6 +141,7 @@
                         <input
                         type="email"
                         name="email"
+                        autocomplete="off"
                         placeholder="Masukkan email"
                         class="w-full
                         bg-slate-50
@@ -174,6 +175,7 @@
                         <input
                         type="password"
                         name="password"
+                        autocomplete="new-password"
                         placeholder="Masukkan password"
                         class="w-full
                         bg-slate-50
@@ -207,6 +209,7 @@
                         <input
                         type="password"
                         name="password_confirmation"
+                        autocomplete="new-password"
                         placeholder="Ulangi password"
                         class="w-full
                         bg-slate-50

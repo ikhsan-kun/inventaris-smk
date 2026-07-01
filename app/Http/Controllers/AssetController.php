@@ -145,7 +145,7 @@ class AssetController extends Controller
             // HAPUS FOTO LAMA
             $fotoLama = public_path('foto-aset/' . $aset->foto);
 
-            if (file_exists($fotoLama)) {
+            if ($aset->foto && file_exists($fotoLama)) {
 
                 unlink($fotoLama);
 
@@ -205,7 +205,7 @@ class AssetController extends Controller
             // =========================
             $fotoPath = public_path('foto-aset/' . $aset->foto);
 
-            if (file_exists($fotoPath)) {
+            if ($aset->foto && file_exists($fotoPath)) {
 
                 unlink($fotoPath);
 

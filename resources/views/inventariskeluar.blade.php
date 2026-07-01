@@ -159,10 +159,10 @@
 
                         @empty
 
-                        <tr class="hover:bg-slate-50 transition-all">
+                        <tr>
 
                         <td colspan="5"
-                            class="px-4 py-8 border border-slate-200 text-center text-slate-400 text-xs italic">
+                            class="border border-slate-200 text-center py-12 text-slate-300 italic text-sm">
 
                                 Belum ada riwayat keluar.
 

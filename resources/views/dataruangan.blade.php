@@ -61,7 +61,7 @@
 
                     <tbody class="divide-y divide-slate-100 card-modern">
 
-                    @foreach($ruangans as $ruangan)
+                    @forelse($ruangans as $ruangan)
 
                     <tr class="hover:bg-slate-50 transition">
 
@@ -135,7 +135,15 @@
 
                     </tr>
 
-                    @endforeach
+                    @empty
+
+                    <tr>
+                        <td colspan="4" class="border border-slate-200 text-center py-12 text-slate-300 italic text-sm">
+                            Belum ada data ruangan.
+                        </td>
+                    </tr>
+
+                    @endforelse
 
                     </tbody>
 
@@ -238,27 +246,6 @@
 
                     </div>
 
-                    <!-- LOKASI -->
-                    <div>
-
-                        <label class="text-[10px] font-semibold uppercase tracking-widest text-slate-400 block mb-2 px-1">
-                            Lokasi Gedung
-                        </label>
-
-                        <select name="lokasi"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all">
-
-                            <option value="">--- Pilih Lokasi Gedung ---</option>
-                            
-                            <option value="Gedung A">Gedung A</option>
-
-                            <option value="Gedung B">Gedung B</option>
-                            
-                            <option value="Gedung C">Gedung C</option>
-
-                        </select>
-
-                    </div>
 
                     <!-- JENIS -->
                     <div>
@@ -435,37 +422,6 @@ hidden items-center justify-center z-50 p-6">
 
                 </div>
 
-                <!-- LOKASI -->
-                <div>
-
-                    <label class="text-[10px] font-semibold uppercase tracking-widest text-slate-400 block mb-2 px-1">
-                        Lokasi Gedung
-                    </label>
-
-                    <select
-                    name="lokasi"
-                    class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm outline-none transition-all">
-
-                        <option value="">--- Pilih Lokasi Gedung ---</option>
-                    
-                        <option value="Gedung A"
-                        {{ $ruangan->lokasi == 'Gedung A' ? 'selected' : '' }}>
-                            Gedung A
-                        </option>
-
-                        <option value="Gedung B"
-                        {{ $ruangan->lokasi == 'Gedung B' ? 'selected' : '' }}>
-                            Gedung B
-                        </option>
-
-                        <option value="Gedung C"
-                        {{ $ruangan->lokasi == 'Gedung C' ? 'selected' : '' }}>
-                            Gedung C
-                        </option>
-
-                    </select>
-
-                </div>
 
                 <!-- JENIS -->
                 <div>

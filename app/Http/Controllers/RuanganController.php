@@ -43,8 +43,6 @@ class RuanganController extends Controller
 
             'kapasitas' => 'required',
 
-            'lokasi' => 'required',
-
             'jenis' => 'required',
 
         ]);
@@ -60,7 +58,7 @@ class RuanganController extends Controller
 
             'kapasitas' => $request->kapasitas,
 
-            'lokasi' => $request->lokasi,
+            'lokasi' => '-',
 
             'jenis' => $request->jenis,
 
@@ -92,8 +90,6 @@ class RuanganController extends Controller
 
             'kapasitas' => 'required',
 
-            'lokasi' => 'required',
-
             'jenis' => 'required',
 
         ]);
@@ -120,7 +116,7 @@ class RuanganController extends Controller
 
         $ruangan->kapasitas = $request->kapasitas;
 
-        $ruangan->lokasi = $request->lokasi;
+        $ruangan->lokasi = '-';
 
         $ruangan->jenis = $request->jenis;
 

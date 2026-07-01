@@ -13,11 +13,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            UserSeeder::class,
-            RuanganSeeder::class,
-            AssetSeeder::class,
-            BarangSeeder::class,
-        ]);
+        \App\Models\User::updateOrCreate(
+            ['email' => 'adminal-irsyad@gmail.com'],
+            [
+                'name' => 'Admin Sarpras',
+                'password' => bcrypt('admin123'),
+                'role' => 'admin',
+            ]
+        );
     }
 }

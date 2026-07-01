@@ -101,22 +101,6 @@
 
                 </a>
 
-                <form action="/logout" method="POST">
-                    @csrf
-
-                    <button type="submit"
-                    class="w-full flex items-center gap-3
-                    px-5 py-4 text-sm text-red-500
-                    hover:bg-red-50 border-t transition">
-
-                        <i class="fas fa-right-from-bracket"></i>
-
-                        Logout
-
-                    </button>
-
-                </form>
-
             </div>
 
         </div>

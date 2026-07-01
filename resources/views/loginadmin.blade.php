@@ -260,10 +260,10 @@
             </div>
 
             <!-- COPYRIGHT -->
-            <p class="text-center text-slate-300
+            <p class="text-center text-[#2f5d50]
             text-[11px] mt-3 font-medium">
 
-                © 2026 SMK Al-Irsyad Kota Tegal
+                © 2026 Chika Aulia Christine | Universitas Harkat Negeri
 
             </p>
 

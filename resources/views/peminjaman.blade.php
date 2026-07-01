@@ -229,7 +229,7 @@
 
                                 onclick="showQR(
 
-                                '{{ $p->barang ? $p->barang->kode_barang : optional($p->aset)->kode_aset }}',
+                                '{{ $p->barang ? url('/detail-barang-qr/'.$p->barang->id) : ($p->aset ? url('/detail-aset-qr/'.$p->aset->id) : '') }}',
 
                                 '{{ $p->barang ? $p->barang->nama_barang : optional($p->aset)->nama_aset }}'
 
@@ -397,7 +397,7 @@
 
                     <td colspan="13"
                     class="border border-slate-200 text-center py-12 text-slate-300 italic text-sm">
-                        Belum ada data peminjaman
+                        Belum ada data peminjaman.
                     </td>
 
                     </tr>

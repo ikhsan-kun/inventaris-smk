@@ -245,7 +245,7 @@
                         <!-- QR -->
                         <button
                         onclick="showQR(
-                        '{{ $barang->kode_barang }}',
+                        '{{ url('/detail-barang-qr/'.$barang->id) }}',
                         '{{ $barang->nama_barang }}'
                         )"
                         class="w-8 h-8

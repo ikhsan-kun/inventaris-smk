@@ -37,7 +37,7 @@
     </style>
 </head>
 
-<body class="min-h-screen overflow-x-hidden">
+<body class="min-h-screen flex flex-col overflow-x-hidden">
 
     <!-- NAVBAR -->
     <nav class="flex justify-end items-center px-8 py-7">
@@ -45,7 +45,7 @@
     </nav>
 
     <!-- HERO -->
-    <section class="max-w-7xl mx-auto px-8 pt-6 pb-16">
+    <section class="max-w-7xl mx-auto px-8 pt-6 pb-16 flex-grow flex items-center">
 
         <div class="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -147,6 +147,19 @@
         </div>
 
     </section>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-[#2f5d50] py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <img src="{{ asset('images/harkat.png') }}" alt="Logo Universitas" class="w-10 h-10 object-contain">
+                <span class="font-bold text-white tracking-tight">Universitas Harkat Negeri</span>
+            </div>
+            <p class="text-[13px] font-semibold text-white text-center sm:text-right">
+                © 2026 Chika Aulia Christine | Universitas Harkat Negeri
+            </p>
+        </div>
+    </footer>
 
     <!-- MODAL LOGIN -->
     <div id="loginModal"
@@ -289,7 +302,5 @@
 
     </script>
 
-</body>
-</html>
 </body>
 </html>
